@@ -6,6 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "start": "node --env-file=.env .",
+    "deploy-commands": "node --env-file=.env deploy-commands.js",
+    "deploy-commands-production": "node --env-file=.env deploy-commands.js production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
