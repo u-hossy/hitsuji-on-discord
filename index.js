@@ -8,6 +8,7 @@ const {
   GatewayIntentBits,
   MessageFlags,
 } = require("discord.js");
+const appMode = process.env.APP_MODE;
 const token = process.env.DISCORD_TOKEN;
 
 // Create a new client instance
@@ -51,6 +52,10 @@ client.login(token);
 // Listen slash commands
 client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
+
+  if (appMode !== "production") {
+    console.log(interaction);
+  }
 
   const command = interaction.client.commands.get(interaction.commandName);
 
