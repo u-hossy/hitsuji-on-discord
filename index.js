@@ -149,16 +149,19 @@ client.on("messageCreate", async (message) => {
       );
     } else {
       // Issues found
-      let replyContent = `**${
+      let replyContent = `# ${
         message.member?.nickname || message.author.username
-      }さんのメッセージの校正結果です:**\n\n`;
+      }さんのメッセージの校正結果\n`;
 
       result.messages.forEach((msg) => {
         // Format and add issue details
-        replyContent += `---\n`;
-        replyContent += `**問題箇所**: 行${msg.loc.start.line}, 列${msg.loc.start.column}\n`;
-        replyContent += `**指摘**: ${msg.message}\n`;
-        replyContent += `**ルール**: \`${msg.ruleId}\`\n`;
+        replyContent += `## 行${msg.loc.start.line}, 列${msg.loc.start.column} ~ 行${msg.loc.end.line}, 列${msg.loc.end.column} \n`;
+        const startIndex = Math.max(0, msg.range[0] - 5);
+        const endIndex = Math.min(textToLint.length, msg.range[1] + 5);
+        const contextText = textToLint.substring(startIndex, endIndex);
+        replyContent += `- **該当箇所**: \`${contextText}\` \n`;
+        replyContent += `- **指摘**: ${msg.message}\n`;
+        replyContent += `- **ルール**: \`${msg.ruleId}\`\n`;
 
         if (msg.fix) {
           // If there's a fix suggestion
@@ -167,7 +170,7 @@ client.on("messageCreate", async (message) => {
             msg.fix.range[1]
           );
           const fixedPart = msg.fix.text;
-          replyContent += `**修正案**: \`${originalPart}\` → \`${fixedPart}\`\n`;
+          replyContent += `- **修正案**: \`${originalPart}\` → \`${fixedPart}\`\n`;
         }
         replyContent += `\n`;
       });
