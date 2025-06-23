@@ -1,0 +1,13 @@
+{
+  "lintChannels": [
+    {
+      "channelId": "YOUR_GENERAL_CHANNEL_ID",
+      "preset": "textlint-rule-preset-japanese"
+    },
+    {
+      "channelId": "YOUR_TECH_CHANNEL_ID",
+      "preset": "textlint-rule-preset-ja-technical-writing"
+    }
+  ],
+  "defaultPreset": "textlint-rule-preset-japanese"
+}
