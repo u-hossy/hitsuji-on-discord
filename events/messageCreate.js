@@ -36,9 +36,10 @@ module.exports = async (message) => {
   // Execute textlint
   try {
     // Build the path to the config file corresponding to the preset
-    const configPath = path.join(
+    const configPath = path.resolve(
       __dirname,
-      "../textlint-configs",
+      "..",
+      "textlint-configs",
       `${presetToUse}.textlintrc.json`
     );
 
