@@ -23,6 +23,9 @@ importers:
       textlint-rule-preset-japanese:
         specifier: ^10.0.4
         version: 10.0.4
+      textlint-rule-preset-jtf-style:
+        specifier: ^3.0.2
+        version: 3.0.2
     devDependencies:
       '@eslint/js':
         specifier: ^9.29.0
