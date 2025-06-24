@@ -129,4 +129,4 @@ dist
 !.yarn/versions
 
 # Discord.js
-config.json
+textlint.config.json

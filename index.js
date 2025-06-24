@@ -11,7 +11,7 @@ const {
 const { createLinter, loadTextlintrc } = require("textlint");
 const appMode = process.env.APP_MODE;
 const token = process.env.DISCORD_TOKEN;
-const config = require("./config.json");
+const config = require("./textlint.config.json");
 
 // Create a new client instance
 const client = new Client({
