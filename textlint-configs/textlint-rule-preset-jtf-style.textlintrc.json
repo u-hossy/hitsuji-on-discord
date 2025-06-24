@@ -3,6 +3,7 @@
     "@textlint/markdown": true
   },
   "rules": {
+    "preset-japanese": true,
     "preset-jtf-style": true
   }
 }
