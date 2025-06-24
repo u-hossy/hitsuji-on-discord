@@ -1,12 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 // Require the necessary discord.js classes
-const {
-  Client,
-  Collection,
-  Events,
-  GatewayIntentBits,
-} = require("discord.js");
+const { Client, Collection, Events, GatewayIntentBits } = require("discord.js");
 
 const appMode = process.env.APP_MODE;
 const token = process.env.DISCORD_TOKEN;
@@ -55,7 +50,7 @@ client.on(Events.InteractionCreate, interactionCreateHandler);
 
 // Listen specific channel message
 const messageCreateHandler = require("./events/messageCreate");
-client.on("messageCreate", messageCreateHandler);
+client.on(Events.MessageCreate, messageCreateHandler);
 
 // Log in to Discord with your client's token
 client.login(token);
