@@ -35,12 +35,16 @@ module.exports = async (message) => {
     await message.channel.sendTyping();
 
     // Generate response
+    const model = channelConfig.model;
+
     const prompt = channelConfig.systemPrompt
-      ? `指示: ${channelConfig.systemPrompt}\n\n入力: ${textToProcess}`
+      ? `### Instructions\n${channelConfig.systemPrompt}\n\n###Input\n${textToProcess}`
       : textToProcess;
 
+    const config = channelConfig.config;
+
     const askGemini = require("../lib/askGemini");
-    const responseText = await askGemini(prompt);
+    const responseText = await askGemini(model, prompt, config);
 
     if (!responseText || responseText.trim().length === 0) {
       await message.reply("Error: Geminiからの応答を生成できませんでした。");
