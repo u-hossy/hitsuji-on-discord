@@ -38,7 +38,7 @@ module.exports = async (message) => {
     const model = channelConfig.model;
 
     const prompt = channelConfig.systemPrompt
-      ? `### Instructions\n${channelConfig.systemPrompt}\n\n###Input\n${textToProcess}`
+      ? `# Instructions\n${channelConfig.systemPrompt}\n\n# Input\n${textToProcess}`
       : textToProcess;
 
     const config = channelConfig.config;
@@ -98,6 +98,10 @@ module.exports = async (message) => {
     } else if (error.message?.includes("safety")) {
       await message.reply(
         "Error: 安全性の理由により、このメッセージには返信できません。"
+      );
+    } else if (error.message?.includes("overloaded")) {
+      await message.reply(
+        "Error: モデルがオーバーロードしました。もう一度お試しください。"
       );
     } else {
       await message.reply("Error: AI応答の生成中にエラーが発生しました。");
