@@ -48,9 +48,13 @@ for (const folder of commandFolders) {
 const slashCommandHandler = require("./events/slashCommand");
 client.on(Events.InteractionCreate, slashCommandHandler);
 
-// Listen specific channel message
+// Listen specific channel message to lint
 const textlintReplyHandler = require("./events/textlintReply");
 client.on(Events.MessageCreate, textlintReplyHandler);
+
+// Listen specific channel message to ask gemini
+const geminiReplyHandler = require("./events/geminiReply");
+client.on(Events.MessageCreate, geminiReplyHandler);
 
 // Log in to Discord with your client's token
 client.login(token);

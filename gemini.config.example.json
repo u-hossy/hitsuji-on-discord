@@ -1,0 +1,14 @@
+{
+  "geminiChannels": [
+    {
+      "channelId": "YOUR_CHANNEL_ID",
+      "model": "gemini-2.5-flash",
+      "systemPrompt": ""
+    },
+    {
+      "channelId": "YOUR_CHANNEL_ID",
+      "model": "gemini-2.5-flash",
+      "systemPrompt": "お嬢様口調で答えてください。"
+    }
+  ]
+}
