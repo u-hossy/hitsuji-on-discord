@@ -128,5 +128,8 @@ dist
 !.yarn/sdks
 !.yarn/versions
 
-# Discord.js
+# textlint
 textlint.config.json
+
+# Gemini
+gemini.config.json
