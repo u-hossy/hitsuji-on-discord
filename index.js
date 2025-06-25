@@ -45,12 +45,12 @@ for (const folder of commandFolders) {
 }
 
 // Listen slash commands
-const interactionCreateHandler = require("./events/interactionCreate");
-client.on(Events.InteractionCreate, interactionCreateHandler);
+const slashCommandHandler = require("./events/slashCommand");
+client.on(Events.InteractionCreate, slashCommandHandler);
 
 // Listen specific channel message
-const messageCreateHandler = require("./events/messageCreate");
-client.on(Events.MessageCreate, messageCreateHandler);
+const textlintReplyHandler = require("./events/textlintReply");
+client.on(Events.MessageCreate, textlintReplyHandler);
 
 // Log in to Discord with your client's token
 client.login(token);
