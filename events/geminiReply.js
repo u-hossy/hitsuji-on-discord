@@ -1,4 +1,3 @@
-const { GoogleGenAI } = require("@google/genai");
 const config = require("../gemini.config.json");
 
 module.exports = async (message) => {
