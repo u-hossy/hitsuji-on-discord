@@ -13,7 +13,7 @@ module.exports = {
     .addStringOption((option) =>
       option
         .setName("prompt")
-        .setDescription("カスタムプロンプトを設定できます")
+        .setDescription("カスタムプロンプトを指定できます")
         .setRequired(false)
     ),
   async execute(interaction) {

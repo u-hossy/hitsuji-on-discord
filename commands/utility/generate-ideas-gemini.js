@@ -7,7 +7,9 @@ module.exports = {
     .addIntegerOption((option) =>
       option
         .setName("limit")
-        .setDescription("メッセージ件数を指定します。1~100で指定してください。")
+        .setDescription(
+          "メッセージ件数を指定できます。1~100で指定してください。"
+        )
         .setRequired(false)
     ),
   async execute(interaction) {

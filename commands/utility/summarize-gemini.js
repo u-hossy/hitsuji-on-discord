@@ -8,7 +8,7 @@ module.exports = {
       option
         .setName("limit")
         .setDescription(
-          "要約するメッセージ件数を指定します。1~100で指定してください。"
+          "要約するメッセージ件数を指定できます。1~100で指定してください。"
         )
         .setRequired(false)
     ),
