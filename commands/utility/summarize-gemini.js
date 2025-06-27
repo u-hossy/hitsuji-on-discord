@@ -44,7 +44,7 @@ module.exports = {
       }
 
       // Check message length limit
-      if (userMessages.length > 8000) {
+      if (userMessages.length > 7900) {
         await interaction.editReply(
           "メッセージが長すぎます。要約するメッセージ件数を減らしてお試しください。"
         );
