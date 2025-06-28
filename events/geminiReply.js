@@ -37,7 +37,7 @@ module.exports = async (message) => {
     const model = channelConfig.model;
 
     const prompt = channelConfig.systemPrompt
-      ? `# Instructions\n${channelConfig.systemPrompt}\n\n# Input\n${textToProcess}`
+      ? `# 指示: \n${channelConfig.systemPrompt}\n\n# 入力: \n${textToProcess}`
       : textToProcess;
 
     const config = channelConfig.config;

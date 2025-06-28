@@ -53,7 +53,7 @@ module.exports = {
 
       // Generate summary using askGemini function
       const askGemini = require("../../lib/askGemini");
-      const prompt = `# Instructions\n以下の内容を日本語で箇条書きに要約してください\n\n# Input\n${userMessages}`;
+      const prompt = `# 指示: \n以下の内容を日本語で箇条書きに要約してください\n\n# 入力: \n${userMessages}`;
 
       const summary = await askGemini("gemini-2.5-flash", prompt, {});
 
