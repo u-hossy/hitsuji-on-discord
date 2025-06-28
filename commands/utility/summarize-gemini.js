@@ -8,7 +8,7 @@ module.exports = {
       option
         .setName("limit")
         .setDescription(
-          "要約するメッセージ件数を指定します。1~100で指定してください。"
+          "要約するメッセージ件数を指定できます。1~100で指定してください。"
         )
         .setRequired(false)
     ),
@@ -44,7 +44,7 @@ module.exports = {
       }
 
       // Check message length limit
-      if (userMessages.length > 8000) {
+      if (userMessages.length > 7900) {
         await interaction.editReply(
           "メッセージが長すぎます。要約するメッセージ件数を減らしてお試しください。"
         );
@@ -53,7 +53,7 @@ module.exports = {
 
       // Generate summary using askGemini function
       const askGemini = require("../../lib/askGemini");
-      const prompt = `# Instructions\n以下の内容を日本語で箇条書きに要約してください\n\n# Input\n${userMessages}`;
+      const prompt = `# 指示: \n以下の内容を日本語で箇条書きに要約してください\n\n# 入力: \n${userMessages}`;
 
       const summary = await askGemini("gemini-2.5-flash", prompt, {});
 

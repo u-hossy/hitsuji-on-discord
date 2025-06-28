@@ -7,7 +7,9 @@ module.exports = {
     .addIntegerOption((option) =>
       option
         .setName("limit")
-        .setDescription("メッセージ件数を指定します。1~100で指定してください。")
+        .setDescription(
+          "メッセージ件数を指定できます。1~100で指定してください。"
+        )
         .setRequired(false)
     ),
   async execute(interaction) {
@@ -49,7 +51,7 @@ module.exports = {
 
       // Generate summary using askGemini function
       const askGemini = require("../../lib/askGemini");
-      const prompt = `# Instructions\n以下の内容を元にアイディアをいくつか考えて、箇条書きにしてください\n\n# Input\n${userMessages}`;
+      const prompt = `# 指示: \n以下の内容を元にアイディアをいくつか考えて、箇条書きにしてください\n\n# 入力: \n${userMessages}`;
 
       const summary = await askGemini("gemini-2.5-flash", prompt, {});
 
