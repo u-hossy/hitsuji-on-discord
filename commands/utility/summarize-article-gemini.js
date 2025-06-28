@@ -26,8 +26,8 @@ module.exports = {
       const userPrompt = interaction.options.getString("prompt");
 
       const prompt = userPrompt
-        ? `# Instructions\n入力に従って、以下のリンク先の内容を日本語で出力してください\n\n# Input\n${userPrompt}\n\n# URL\n${userMessages}`
-        : `# Instructions\n以下のリンク先の内容を日本語で要約してください\n\n# URL\n${userMessages}`;
+        ? `# 指示\n入力に従って、以下のURLの内容を日本語で出力してください\n\n# 入力\n${userPrompt}\n\n# URL\n${targetUrl}`
+        : `# 指示\n以下のURLの内容を日本語で要約してください\n\n# URL\n${targetUrl}`;
 
       // Check message length limit
       if (userMessages.length > 7900) {
