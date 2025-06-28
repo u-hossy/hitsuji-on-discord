@@ -6,7 +6,7 @@ module.exports = {
     .setDescription("Geminiが与えられたリンク先の内容を要約します")
     .addStringOption((option) =>
       option
-        .setName("URL")
+        .setName("url")
         .setDescription("要約対象のサイトを指定します。")
         .setRequired(true)
     )
@@ -21,7 +21,7 @@ module.exports = {
       // Send typing indicator
       await interaction.deferReply();
 
-      const targetUrl = interaction.options.getString("URL");
+      const targetUrl = interaction.options.getString("url");
 
       const userPrompt = interaction.options.getString("prompt");
 
