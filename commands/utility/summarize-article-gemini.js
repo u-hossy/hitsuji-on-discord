@@ -29,18 +29,10 @@ module.exports = {
         ? `# 指示: \n入力に従って、以下のURLの内容を日本語で出力してください\n\n# 入力: \n${userPrompt}\n\n# URL: \n${targetUrl}`
         : `# 指示: \n以下のURLの内容を日本語で要約してください\n\n# URL: \n${targetUrl}`;
 
-      // Check message length limit
-      if (userMessages.length > 7900) {
-        await interaction.editReply(
-          "メッセージが長すぎます。要約するメッセージ件数を減らしてお試しください。"
-        );
-        return;
-      }
-
       // Generate summary using askGemini function
       const askGemini = require("../../lib/askGemini");
       const geminiAnswer = await askGemini("gemini-2.5-flash", prompt, {
-        urlContext: {},
+        tools: [{ urlContext: {} }],
       });
 
       if (!geminiAnswer || geminiAnswer.trim().length === 0) {
@@ -84,6 +76,7 @@ module.exports = {
       } else {
         await interaction.editReply(geminiAnswer);
       }
+      await interaction.followUp(`**出典**: ${targetUrl}`);
     } catch (error) {
       console.error(
         "リンク先要約コマンドの実行中にエラーが発生しました:",
