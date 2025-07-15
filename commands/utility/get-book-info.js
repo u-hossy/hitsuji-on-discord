@@ -29,7 +29,7 @@ module.exports = {
     }
 
     await interaction.editReply(
-      `- **タイトル**：${bookInfo.title}\n- **著者**：${bookInfo.author}\n- **出版日**：${bookInfo.publishDate}\n- **説明**：\n ${bookInfo.description}`
+      `- **タイトル**: ${bookInfo.title}\n- **著者**: ${bookInfo.author}\n- **出版日**: ${bookInfo.publishDate}\n- **説明**:\n  ${bookInfo.description}`
     );
     if (bookInfo.isbn10) {
       await interaction.followUp(`- https://calil.jp/book/${bookInfo.isbn10}`);
