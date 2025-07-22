@@ -37,7 +37,7 @@ module.exports = async (message) => {
     const model = channelConfig.model;
 
     const prompt = channelConfig.systemPrompt
-      ? `# 指示: \n${channelConfig.systemPrompt}\n\n# 入力: \n${textToProcess}`
+      ? `# Instruction: \n${channelConfig.systemPrompt}\n\n# Input: \n${textToProcess}`
       : textToProcess;
 
     const config = channelConfig.config;
@@ -73,13 +73,10 @@ module.exports = async (message) => {
         chunks.push(currentChunk.trim());
       }
 
-      // Send the first chunk as a reply
+      // Send the message
       if (chunks.length > 0) {
-        await message.reply(chunks[0]);
-
-        // Send remaining chunks as follow-up messages
-        for (let i = 1; i < chunks.length; i++) {
-          await message.channel.send(chunks[i]);
+        for (let i = 0; i < chunks.length; i++) {
+          await message.reply(chunks[i]);
         }
       }
     } else {
