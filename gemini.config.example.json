@@ -3,7 +3,7 @@
     {
       "channelId": "YOUR_CHANNEL_ID",
       "model": "gemini-2.5-flash",
-      "systemPrompt": "日本語で回答してください。",
+      "systemPrompt": "入力に対して日本語で回答してください。",
       "config": {
         "tools": []
       }
@@ -11,7 +11,7 @@
     {
       "channelId": "YOUR_CHANNEL_ID",
       "model": "gemini-2.5-flash",
-      "systemPrompt": "以下の内容を日本語で要約してください。",
+      "systemPrompt": "入力された内容を日本語で要約してください。",
       "config": {
         "tools": []
       }
@@ -19,7 +19,7 @@
     {
       "channelId": "YOUR_CHANNEL_ID",
       "model": "gemini-2.5-flash",
-      "systemPrompt": "お嬢様口調の日本語で答えてください。",
+      "systemPrompt": "入力に対してお嬢様口調の日本語で答えてください。",
       "config": {
         "tools": []
       }
@@ -27,7 +27,7 @@
     {
       "channelId": "YOUR_CHANNEL_ID",
       "model": "gemini-2.5-flash",
-      "systemPrompt": "以下の質問をインターネットで検索して日本語で答えてください。",
+      "systemPrompt": "入力された質問をインターネットで検索して日本語で答えてください。",
       "config": {
         "tools": [{ "googleSearch": {} }]
       }
@@ -35,7 +35,15 @@
     {
       "channelId": "YOUR_CHANNEL_ID",
       "model": "gemini-2.5-flash",
-      "systemPrompt": "以下の質問を示されているURLの内容を参照して日本語で答えてください。",
+      "systemPrompt": "Provide synonyms for the word I input.",
+      "config": {
+        "tools": [{ "googleSearch": {} }]
+      }
+    },
+    {
+      "channelId": "YOUR_CHANNEL_ID",
+      "model": "gemini-2.5-flash",
+      "systemPrompt": "入力された質問を示されているURLの内容を参照して日本語で答えてください。",
       "config": {
         "tools": [{ "urlContext": {} }]
       }
@@ -43,7 +51,7 @@
     {
       "channelId": "YOUR_CHANNEL_ID",
       "model": "gemini-2.5-flash",
-      "systemPrompt": "以下の質問をインターネットで検索、示されているURLの内容を参照して日本語で答えてください。",
+      "systemPrompt": "入力された質問をインターネットで検索、示されているURLの内容を参照して日本語で答えてください。",
       "config": {
         "tools": [{ "urlContext": {} }, { "googleSearch": {} }]
       }
