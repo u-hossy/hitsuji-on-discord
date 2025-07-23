@@ -35,7 +35,7 @@
     {
       "channelId": "YOUR_CHANNEL_ID",
       "model": "gemini-2.5-flash",
-      "systemPrompt": "Provide synonyms for the word I input.",
+      "systemPrompt": "Provide synonyms for the word I input in Japanese.",
       "config": {
         "tools": [{ "googleSearch": {} }]
       }
