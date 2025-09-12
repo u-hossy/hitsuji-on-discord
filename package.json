@@ -16,7 +16,7 @@
   "dependencies": {
     "@google/genai": "^1.6.0",
     "@textlint/textlint-plugin-markdown": "^15.0.1",
-    "discord.js": "^14.20.0",
+    "discord.js": "^14.22.1",
     "textlint": "^14.8.4",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2",
     "textlint-rule-preset-japanese": "^10.0.4",
