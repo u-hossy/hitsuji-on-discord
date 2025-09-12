@@ -3,7 +3,6 @@ const path = require("node:path");
 // Require the necessary discord.js classes
 const { Client, Collection, Events, GatewayIntentBits } = require("discord.js");
 
-const appMode = process.env.APP_MODE;
 const token = process.env.DISCORD_TOKEN;
 
 // Create a new client instance
@@ -38,7 +37,7 @@ for (const folder of commandFolders) {
       client.commands.set(command.data.name, command);
     } else {
       console.log(
-        `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`
+        `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`,
       );
     }
   }
