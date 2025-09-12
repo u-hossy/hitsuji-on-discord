@@ -1,0 +1,22 @@
+name: CI
+
+on: push
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    concurrency:
+      group: ${{ github.workflow }}-{{ $github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: pnpm setup
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm run lint
