@@ -14,7 +14,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.12.1",
   "dependencies": {
-    "@google/genai": "^1.6.0",
+    "@google/genai": "^1.22.0",
     "@textlint/textlint-plugin-markdown": "^15.2.2",
     "discord.js": "^14.22.1",
     "textlint": "^15.2.2",
