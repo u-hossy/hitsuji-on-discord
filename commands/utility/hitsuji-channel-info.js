@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("hitsuji-channel-info")
-    .setDescription("チャンネルの詳細を返します"),
+    .setDescription("チャンネル名とチャンネルIDを返します"),
   async execute(interaction) {
     const channel = interaction.channel;
     await interaction.reply(

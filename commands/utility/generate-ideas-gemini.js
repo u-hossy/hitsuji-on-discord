@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("generate-ideas-gemini")
-    .setDescription("Geminiが送信されたメッセージからアイディアを生成します")
+    .setDescription("Geminiが送信されたメッセージをもとにアイディアを生成します")
     .addIntegerOption((option) =>
       option
         .setName("limit")
