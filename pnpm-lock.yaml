@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@google/genai':
-        specifier: ^1.22.0
-        version: 1.22.0(@modelcontextprotocol/sdk@1.18.0)
+        specifier: ^1.23.0
+        version: 1.23.0(@modelcontextprotocol/sdk@1.18.0)
       '@textlint/textlint-plugin-markdown':
         specifier: ^15.2.2
         version: 15.2.2
@@ -135,8 +135,8 @@ packages:
     resolution: {integrity: sha512-sB5uyeq+dwCWyPi31B2gQlVlo+j5brPlWx4yZBrEaRo/nhdDE8Xke1gsGgtiBdaBTxuTkceLVuVt/pclrasb0A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@google/genai@1.22.0':
-    resolution: {integrity: sha512-siETS3zTm3EGpTT4+BFc1z20xXBYfueD3gCYfxkOjuAKRk8lt8TJevDHi3zepn1oSI6NhG/LZvy0i+Q3qheObg==}
+  '@google/genai@1.23.0':
+    resolution: {integrity: sha512-d/rMD0GP3lXlR03qk2feLbBes2YVGhbPNxZsnUdZCn6AfOKXaOKfEtVWpyQrMMxRRYtLtN3UXmDUH+OfRN4F4A==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@modelcontextprotocol/sdk': ^1.11.4
@@ -2123,7 +2123,7 @@ snapshots:
       '@eslint/core': 0.16.0
       levn: 0.4.1
 
-  '@google/genai@1.22.0(@modelcontextprotocol/sdk@1.18.0)':
+  '@google/genai@1.23.0(@modelcontextprotocol/sdk@1.18.0)':
     dependencies:
       google-auth-library: 9.15.1
       ws: 8.18.3
